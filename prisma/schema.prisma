@@ -20,7 +20,7 @@ generator dbml {
 }
 
 model Product {
-  id String @id @default(cuid())
+  id String @id @default(ulid())
 
   slug String @unique // butter-croissant
   name String @unique // Butter Croissant
@@ -28,6 +28,8 @@ model Product {
   price Decimal // EUR = €1.5
 
   images ProductImage[]
+
+  featured Boolean? @default(false)
 
   category   Category @relation(fields: [categoryId], references: [id])
   categoryId String
@@ -37,7 +39,7 @@ model Product {
 }
 
 model ProductImage {
-  id String @id @default(cuid())
+  id String @id @default(ulid())
 
   url     String @unique // https://example.com/images/product.jpg
   altText String // A butter croissant
@@ -50,7 +52,7 @@ model ProductImage {
 }
 
 model Category {
-  id String @id @default(uuid())
+  id String @id @default(ulid())
 
   slug String @unique // short-bread
   name String @unique // Short Bread

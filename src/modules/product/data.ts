@@ -10,6 +10,7 @@ export const seedDataProducts: SeedProduct[] = [
     name: "Butter Croissant",
     price: 10,
     categorySlug: "pastries",
+    featured: true,
     images: [
       {
         url: "https://media.istockphoto.com/id/1494437052/fr/photo/croissant-et-pain-au-chocolat-sur-planche-de-bois.jpg?s=612x612&w=0&k=20&c=n_WFRLWhoaodKtlPoNYuXyTjKZCgz8Y5vGYwyt2zltU=",
@@ -33,14 +34,15 @@ export const seedDataProducts: SeedProduct[] = [
   {
     slug: "pain-au-chocolat",
     name: "Pain au Chocolat",
+    price: 10,
+    categorySlug: "pastries",
+    featured: true,
     images: [
       {
         url: "https://media.istockphoto.com/id/672982342/fr/photo/three-pain-au-chocolat.jpg?s=612x612&w=0&k=20&c=39H5GMmoPsIn5BeooqFGovtexnAyC2ro1BBhGseOOO8=",
         altText: "Pain au Chocolat",
       },
     ],
-    price: 10,
-    categorySlug: "pastries",
   },
   {
     slug: "cafe-au-lait",
@@ -55,10 +57,11 @@ export const seedDataProducts: SeedProduct[] = [
     ],
   },
   {
-    slug: "baguette",
-    name: "Baguette",
+    slug: "french-baguette",
+    name: "French Baguette",
     price: 10,
     categorySlug: "breads",
+    featured: true,
     images: [
       {
         url: "https://media.istockphoto.com/id/166578145/fr/photo/baguettes-de-pain.jpg?s=612x612&w=0&k=20&c=F2_xC144R7CZ8pl-3BYmCOyzK21rSrnXlOCElCdf8j0=",

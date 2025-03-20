@@ -1,10 +1,13 @@
 import { apiReference } from "@scalar/hono-api-reference";
 import { OpenAPIHono } from "@hono/zod-openapi";
+import { cors } from "hono/cors";
 
 import { productsRoute } from "./routes/products";
 import { categoriesRoute } from "./routes/categories";
 
 const app = new OpenAPIHono();
+
+app.use(cors());
 
 app
   .basePath("/")

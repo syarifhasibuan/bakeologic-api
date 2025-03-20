@@ -30,6 +30,7 @@ productsRoute.openapi(
       const products = await prisma.product.findMany({
         include: {
           category: true,
+          images: true,
         },
       });
       return c.json(products, 200);
@@ -125,6 +126,7 @@ productsRoute.openapi(
         },
         include: {
           category: true,
+          images: true,
         },
       });
       return c.json(product, 201);

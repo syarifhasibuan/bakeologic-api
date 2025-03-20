@@ -1,8 +1,8 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
-import { CategorySchema } from "../../prisma/generated/zod";
 import { ResponseErrorSchema } from "../modules/common/schema";
 
 import { prisma } from "../lib/prisma";
+import { CategorySchema } from "../modules/category/schema";
 
 export const categoriesRoute = new OpenAPIHono();
 
@@ -26,7 +26,11 @@ categoriesRoute.openapi(
   }),
   async (c) => {
     try {
-      const categories = await prisma.category.findMany();
+      const categories = await prisma.category.findMany({
+        include: {
+          products: true,
+        },
+      });
       return c.json(categories, 200);
     } catch (error) {
       console.error(error);
